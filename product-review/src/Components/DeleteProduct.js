@@ -1,6 +1,7 @@
 import React from 'react' 
 import Axios from 'axios' 
 import {Card, Button, Form, Col} from 'react-bootstrap'
+import NavAdmin from './NavAdmin'
 
 class DeleteProduct extends React.Component{
 
@@ -39,14 +40,15 @@ class DeleteProduct extends React.Component{
     render() {
         return(
             <div>
-                <Card className={"border border-dark bg-dark text-white"}>
-                    <Card.Header>Delete Product</Card.Header>
+                <NavAdmin />
+                <Card className={"border border-light bg-light text-dark"}>
+                    
                     <Card.Body>
                         <Form onSubmit={this.deleteProduct}>
                             <Form.Row>
                             <Form.Group as={Col} controlId="formGrpID">
                                 <Form.Label>Product ID</Form.Label>
-                                <Form.Control required type="text" className={"bg-dark text-white"} placeholder="Enter Product ID" name="productID" value={this.state.productID} onChange={this.productChange}></Form.Control>
+                                <Form.Control required type="text" className={"bg-light text-dark"} placeholder="Enter Product ID" name="productID" value={this.state.productID} onChange={this.productChange}></Form.Control>
                             </Form.Group>
                             </Form.Row>
                          </Form>

@@ -23,7 +23,7 @@ class UpdateProduct extends React.Component{
     updateProduct(event) {
         event.preventDefault();
 
-        Axios.put('http://localhost:8086/Application/Admin/product/update/'+this.state.productID,{
+        Axios.put('http://localhost:8086/ProductReview/Admin/product/update/'+this.state.productID,{
             productID: parseInt(this.state.productID),
             productName: this.state.productName,
             productPrice: parseInt(this.state.productPrice),
@@ -37,7 +37,7 @@ class UpdateProduct extends React.Component{
     }
 
     componentDidMount() {
-        fetch('http://localhost:8086/Application/Admin/product/1')
+        fetch('http://localhost:8086/ProductReview/Admin/product/1')
             .then(res => res.json())
             .then(json => {
            this.setState({
@@ -61,27 +61,27 @@ class UpdateProduct extends React.Component{
         return(
             
             <div>
-                <Card className={"border border-dark bg-dark text-white"}>
-                    <Card.Header>Update Product</Card.Header>
+                <Card className={"border border-light bg-light text-dark"}>
+                    
                     <Card.Body>
                         <Form onSubmit={this.updateProduct}>
                             <Form.Row>
                                 <Form.Group as={Col} controlId="Grif1">
                                 <Form.Label>Product ID</Form.Label>
-                                <Form.Control required type="text" className={"bg-dark text-white"} placeholder="Enter Product ID" name="productID" value={this.state.productID} onChange={this.productChange}/>{' '}
+                                <Form.Control required type="text" className={"bg-light text-dark"} placeholder="Enter Product ID" name="productID" value={this.state.productID} onChange={this.productChange}/>{' '}
                                 </Form.Group>
                             </Form.Row>
                             <Form.Row>
                                 <Form.Label>Product Name</Form.Label>
-                                <Form.Control  type="text" className={"bg-dark text-white"} placeholder="Enter Product Name" id="productNAME" name="productName" value={this.state.productName} onChange={this.productChange}/>
+                                <Form.Control  type="text" className={"bg-light text-dark"} placeholder="Enter Product Name" id="productNAME" name="productName" value={this.state.productName} onChange={this.productChange}/>
                             </Form.Row>
                             <Form.Row>
                                 <Form.Label>Product Price</Form.Label>
-                                <Form.Control type="text" className={"bg-dark text-white"} placeholder="Enter Product Price" name="productPrice" value={this.state.productPrice} onChange={this.productChange}/>
+                                <Form.Control type="text" className={"bg-light text-dark"} placeholder="Enter Product Price" name="productPrice" value={this.state.productPrice} onChange={this.productChange}/>
                             </Form.Row>
                             <Form.Row>
                                 <Form.Label>Product Description</Form.Label>
-                                <Form.Control type="text" className={"bg-dark text-white"} placeholder="Enter Product Description" name="productDescription" value={this.state.productDescription} onChange={this.productChange}/>
+                                <Form.Control type="text" className={"bg-light text-dark"} placeholder="Enter Product Description" name="productDescription" value={this.state.productDescription} onChange={this.productChange}/>
                             </Form.Row>
                         </Form>
                     </Card.Body>

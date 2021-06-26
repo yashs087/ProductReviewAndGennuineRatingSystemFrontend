@@ -1,0 +1,13 @@
+.table thead{
+    border: none;
+}
+.table thead th{
+    padding: 20px;
+}
+.table tbody tr{
+    border-bottom: 20px solid #f8f9fa;
+}
+.table tbody td{
+    padding: 40px 25px;
+    border: none;
+}

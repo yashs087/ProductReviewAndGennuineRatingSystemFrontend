@@ -10,10 +10,10 @@ class Footer extends React.Component{
         let year = new Date().getFullYear();
 
         return (
-            <Navbar fixed="bottom" bg="dark" variant = "dark">
+            <Navbar fixed= "bottom" bg="dark" variant = "dark">
                 <Container>
-                    <Col lg={12} className="text-center text-muted">
-                        <div>{year}, Created by DAKSH YADAV</div>
+                    <Col lg={12} className="text-center text-muted" style={{marginTop: '10px'}}>
+                        <div>{year}, Product Review and Rating</div>
                     </Col>
                 </Container>
             </Navbar>

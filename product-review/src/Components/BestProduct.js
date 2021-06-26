@@ -1,8 +1,7 @@
 import React from 'react' 
 import {Card, Form, Button, Col, Table} from 'react-bootstrap'
-
-
-
+import NavCustomer from './NavCustomer'
+import '../css/Table.css'
 
 class AddProduct extends React.Component{
 
@@ -50,14 +49,15 @@ class AddProduct extends React.Component{
     render() {
         return(
             <div>
-                <Card className={"border border-dark bg-dark text-white"}>
-                    <Card.Header>Search Best Product</Card.Header>
+                <NavCustomer />
+                <Card className={"border border-light bg-light text-dark"}>
+                    
                     <Card.Body>
                         <Form onSubmit={this.submitProduct} controlId="addForm">
                             <Form.Row>
                             <Form.Group as={Col} controlId="formGroupName">
                                 <Form.Label>Product Category</Form.Label>
-                                <Form.Control required type="text" className={"bg-dark text-white"} placeholder="Enter Product Category" name="productName" value={this.state.productName} onChange={this.productChange}/>
+                                <Form.Control required type="text" className={"bg-light text-dark"} placeholder="Enter Product Category" name="productName" value={this.state.productName} onChange={this.productChange}/>
                             </Form.Group>
                             </Form.Row>
                         </Form>
@@ -67,10 +67,10 @@ class AddProduct extends React.Component{
                         <Button controlId="button" size="sm" variant="primary" type="reset" onClick={this.clearField}>Reset</Button>
                     </Card.Footer>
                 </Card>
-                <Card className={"border border-dark bg-dark text-white"}>
+                <Card className={"border border-light bg-light text-dark"}>
                 <Card.Header>Products Found</Card.Header>
                     <Card.Body>
-                        <Table bordered hover striped variant="dark">
+                        <Table bordered hover striped variant>
                             <thead>
                                 <tr>
                                     <th>Product ID</th>

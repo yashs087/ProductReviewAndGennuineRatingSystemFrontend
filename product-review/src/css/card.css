@@ -1,0 +1,18 @@
+.category .card{
+    padding-bottom: 30px;
+    
+}
+.card-text{
+    color: black;
+    margin-top: 100px;
+    margin: 50% auto;
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    width:50%;
+    opacity: 0;
+}
+
+.category .card:hover .card-text{
+    opacity: 1;
+    font-weight: 20px;
+}

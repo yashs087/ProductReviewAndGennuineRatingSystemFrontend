@@ -1,11 +1,30 @@
 import React from 'react'
-import { NavDropdown } from 'react-bootstrap';
 import {Navbar, Nav} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-
-
+import {Link, withRouter} from 'react-router-dom'
+import person from "../images/person.png"
 
 class NavigationBar extends React.Component{
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      productName: '',
+    }
+
+    this.productChange = this.productChange.bind(this);
+    this.submitProduct = this.submitProduct.bind(this);
+}
+
+submitProduct() {
+  this.props.history.push('/searchtable',this.state.productName);
+}
+
+productChange(event) {
+  this.setState({
+      [event.target.name]: event.target.value
+  });
+}
 
     render(){
         return(
@@ -15,25 +34,14 @@ class NavigationBar extends React.Component{
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
               <Link to={""} className="navbar-brand">Home</Link>
-                <NavDropdown title="Features" id="collasible-nav-dropdown">
-                  <Link to={"addproduct"} className="dropdown-item">Add Product</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"updateproduct"} className="dropdown-item">Update Products</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"viewproduct"} className="dropdown-item">View Products</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"deleteproduct"} className="dropdown-item">Delete Product</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"viewreview"} className="dropdown-item">View Product Reviews</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"viewcustomers"} className="dropdown-item">View Customers</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"searchproduct"} className="dropdown-item">Search Product</Link>
-                  <NavDropdown.Divider />
-                  <Link to={"bestproduct"} className="dropdown-item">Search Best Product</Link>
-                </NavDropdown>
-                <Nav.Link href="#pricing">About</Nav.Link>
+                
+                <Nav.Link href="/about">About</Nav.Link>
+                
               </Nav>
+              
+              <Nav>
+      <Nav.Link href="/login"><img src={person} alt="user" style={{height:'30px', width:'30px'}}/></Nav.Link>
+    </Nav>
             </Navbar.Collapse>
           </Navbar>
         );
@@ -41,4 +49,4 @@ class NavigationBar extends React.Component{
 
 }
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

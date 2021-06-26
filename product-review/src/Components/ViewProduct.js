@@ -1,5 +1,7 @@
 import React from 'react' 
 import {Card, Table} from 'react-bootstrap' 
+import NavAdmin from './NavAdmin'
+import "../css/Table.css"
 
 class ViewProduct extends React.Component {
 
@@ -12,7 +14,7 @@ class ViewProduct extends React.Component {
     }
 
     componentDidMount() {
-       fetch('http://localhost:8086/ProductReview/Admin/product/view/')
+       fetch('http://localhost:8086/Application/Admin/product/view/')
        .then(res => res.json())
        .then(json => {
            this.setState({
@@ -23,10 +25,12 @@ class ViewProduct extends React.Component {
 
     render() {
         return(
-            <Card className={"border border-dark bg-dark text-white"}>
-                <Card.Header>View Products</Card.Header>
+            <div>
+            <NavAdmin />
+            <Card className={"border border-light bg-light text-dark"}>
+                
                     <Card.Body>
-                        <Table bordered hover striped variant="dark">
+                        <Table bordered hover striped variant>
                             <thead>
                                 <tr>
                                     <th>Product ID</th>
@@ -56,6 +60,7 @@ class ViewProduct extends React.Component {
                         </Table>
                     </Card.Body>
             </Card>
+            </div>
         )
     }
 
